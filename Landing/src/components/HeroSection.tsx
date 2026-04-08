@@ -58,7 +58,7 @@ export function HeroSection() {
           </ul>
 
           <motion.a
-            href="https://pequesfelicesok.myshopify.com/cart/T10490522566958:1?checkout"
+            href="https://pequesfelicesok.myshopify.com/cart/51935759466798:1"
             onClick={() => (window as any).fbq("track", "AddToCart")}
             className="inline-block w-full md:w-auto bg-accent hover:bg-yellow-500 text-dark font-heading font-bold text-lg md:text-xl py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105 text-center pt-[16px] pb-[16px]"
             whileHover={{
