@@ -7,7 +7,8 @@ const SHOPIFY_CONFIG = {
 };
 
 export default function ShopifyBuyButton({ className, children, onClick }) {
-  const containerRef = useRef(null);
+  const cartRef = useRef(null);
+  const clientRef = useRef(null);
 
   useEffect(() => {
     const scriptURL =
@@ -19,18 +20,12 @@ export default function ShopifyBuyButton({ className, children, onClick }) {
         storefrontAccessToken: SHOPIFY_CONFIG.storefrontAccessToken,
       });
 
+      clientRef.current = client;
+
       window.ShopifyBuy.UI.onReady(client).then((ui) => {
-        ui.createComponent("product", {
-          id: SHOPIFY_CONFIG.productId,
-          node: containerRef.current,
-          moneyFormat: "%24%7B%7Bamount_with_comma_separator%7D%7D",
+        // Creamos solo el carrito (sin el producto visible)
+        cartRef.current = ui.createComponent("cart", {
           options: {
-            product: {
-              styles: {
-                product: { display: "none" },
-              },
-              text: { button: "Comprar" },
-            },
             cart: {
               text: {
                 total: "Subtotal",
@@ -38,7 +33,6 @@ export default function ShopifyBuyButton({ className, children, onClick }) {
               },
               popup: false,
             },
-            toggle: {},
           },
         });
       });
@@ -55,31 +49,32 @@ export default function ShopifyBuyButton({ className, children, onClick }) {
     }
   }, []);
 
-  function handleClick() {
-    // Dispara el tracking (fbq u otro) si se pasó onClick
+  async function handleClick() {
+    // Dispara el tracking
     if (onClick) onClick();
 
-    // Busca y clickea el botón oculto de Shopify
-    const shopifyBtn = containerRef.current?.querySelector(
-      ".shopify-buy__btn, [class*='btn']"
-    );
-    if (shopifyBtn) shopifyBtn.click();
+    if (!cartRef.current || !clientRef.current) {
+      console.warn("Shopify todavía no está listo");
+      return;
+    }
+
+    try {
+      // Busca el producto y lo agrega al carrito directamente
+      const product = await clientRef.current.product.fetch(
+        `gid://shopify/Product/${SHOPIFY_CONFIG.productId}`
+      );
+      const variant = product.variants[0];
+      await cartRef.current.addVariantToCart(variant, 1);
+      cartRef.current.open();
+    } catch (err) {
+      console.error("Error al abrir el carrito:", err);
+    }
   }
 
   return (
-    <>
-      {/* Contenedor invisible donde Shopify monta su componente */}
-      <div
-        ref={containerRef}
-        id="product-component-1776007025786"
-        style={{ display: "none" }}
-        aria-hidden="true"
-      />
-
-      {/* Tu botón con tu diseño */}
-      <button onClick={handleClick} className={className}>
-        {children || "Comprar ahora"}
-      </button>
-    </>
+    <button onClick={handleClick} className={className}>
+      {children || "Comprar ahora"}
+    </button>
   );
 }
+
