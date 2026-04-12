@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const SHOPIFY_CONFIG = {
   domain: "h0ygyx-ew.myshopify.com",
@@ -9,6 +9,8 @@ const SHOPIFY_CONFIG = {
 export default function ShopifyBuyButton({ className, children, onClick }) {
   const cartRef = useRef(null);
   const clientRef = useRef(null);
+  const readyRef = useRef(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const scriptURL =
@@ -23,7 +25,6 @@ export default function ShopifyBuyButton({ className, children, onClick }) {
       clientRef.current = client;
 
       window.ShopifyBuy.UI.onReady(client).then((ui) => {
-        // Creamos solo el carrito (sin el producto visible)
         cartRef.current = ui.createComponent("cart", {
           options: {
             cart: {
@@ -35,6 +36,8 @@ export default function ShopifyBuyButton({ className, children, onClick }) {
             },
           },
         });
+        readyRef.current = true;
+        console.log("Shopify listo ✓");
       });
     }
 
@@ -50,16 +53,16 @@ export default function ShopifyBuyButton({ className, children, onClick }) {
   }, []);
 
   async function handleClick() {
-    // Dispara el tracking
     if (onClick) onClick();
 
-    if (!cartRef.current || !clientRef.current) {
-      console.warn("Shopify todavía no está listo");
-      return;
+    // Si Shopify no está listo todavía, esperamos hasta 5 segundos
+    if (!readyRef.current) {
+      setLoading(true);
+      await waitUntilReady();
+      setLoading(false);
     }
 
     try {
-      // Busca el producto y lo agrega al carrito directamente
       const product = await clientRef.current.product.fetch(
         `gid://shopify/Product/${SHOPIFY_CONFIG.productId}`
       );
@@ -71,10 +74,24 @@ export default function ShopifyBuyButton({ className, children, onClick }) {
     }
   }
 
+  function waitUntilReady(timeout = 5000) {
+    return new Promise((resolve, reject) => {
+      const start = Date.now();
+      const interval = setInterval(() => {
+        if (readyRef.current) {
+          clearInterval(interval);
+          resolve();
+        } else if (Date.now() - start > timeout) {
+          clearInterval(interval);
+          reject(new Error("Shopify tardó demasiado en cargar"));
+        }
+      }, 100);
+    });
+  }
+
   return (
-    <button onClick={handleClick} className={className}>
-      {children || "Comprar ahora"}
+    <button onClick={handleClick} className={className} disabled={loading}>
+      {loading ? "Cargando..." : children || "Comprar ahora"}
     </button>
   );
 }
-
