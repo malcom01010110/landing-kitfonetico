@@ -7,7 +7,7 @@ export function StickyAlertBar() {
         <Zap className="w-4 h-4 md:w-5 md:h-5 mr-2 animate-pulse" />
         <span>
           ⚡ Oferta especial por tiempo limitado ¡Acceso de por vida por solo
-          $9.99!
+          $12.000!
         </span>
       </div>
     </div>);
