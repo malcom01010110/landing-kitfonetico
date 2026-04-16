@@ -39,16 +39,16 @@ export function PricingOffer() {
               <div className="space-y-4 mb-8">
                 <div className="flex justify-between items-center text-body font-medium">
                   <span>Kit principal</span>
-                  <span>U$16</span>
+                  <span>$15.000</span>
                 </div>
                 <div className="flex justify-between items-center text-body font-medium">
                   <span>6 Bonos Exclusivos</span>
-                  <span>U$60</span>
+                  <span>$58.000</span>
                 </div>
                 <div className="h-px bg-gray-300 w-full my-2"></div>
                 <div className="flex justify-between items-center text-dark font-bold text-lg">
                   <span>Valor Total Real</span>
-                  <span className="line-through text-danger">U$76</span>
+                  <span className="line-through text-danger">$73.000</span>
                 </div>
               </div>
 
