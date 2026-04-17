@@ -39,11 +39,11 @@ export function PricingOffer() {
               <div className="space-y-4 mb-8">
                 <div className="flex justify-between items-center text-body font-medium">
                   <span>Kit principal</span>
-                  <span>$15.000</span>
+                  <span>$14.000</span>
                 </div>
                 <div className="flex justify-between items-center text-body font-medium">
                   <span>6 Bonos Exclusivos</span>
-                  <span>$58.000</span>
+                  <span>$59.000</span>
                 </div>
                 <div className="h-px bg-gray-300 w-full my-2"></div>
                 <div className="flex justify-between items-center text-dark font-bold text-lg">
@@ -54,7 +54,7 @@ export function PricingOffer() {
 
               <div className="relative w-full aspect-video bg-white rounded-xl border border-gray-200 flex items-center justify-center mb-4">
                 <div className="absolute -top-3 -right-3 bg-danger text-white font-bold px-3 py-1 rounded-full transform rotate-12 shadow-md">
-                  -87% OFF
+                  -84% OFF
                 </div>
                 <span className="text-4xl">📚 + 🎁</span>
               </div>
