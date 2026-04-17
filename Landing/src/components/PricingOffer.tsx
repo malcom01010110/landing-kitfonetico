@@ -67,7 +67,7 @@ export function PricingOffer() {
               </p>
 
               <div className="text-6xl md:text-7xl font-heading font-black text-dark mb-4 flex items-start justify-center">
-                <PriceDisplay amount={90} />
+                <PriceDisplay amount={12.000} />
               </div>
 
               <p className="text-sm text-body font-medium mb-8 bg-gray-100 py-2 px-4 rounded-full">
