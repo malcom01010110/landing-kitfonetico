@@ -75,7 +75,7 @@ export function PricingOffer() {
               </p>
 
               <motion.a
-                href="https://pequesfelicesok.myshopify.com/cart/T10490522566958:1?checkout"
+                href="https://pequesfelicesok.myshopify.com/cart/51935759466798:1"
                 onClick={() => (window as any).fbq("track", "AddToCart")}
                 className="w-full bg-accent hover:bg-yellow-500 text-dark font-heading font-black text-xl py-5 px-8 rounded-2xl shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-2 mb-6"
                 whileHover={{
