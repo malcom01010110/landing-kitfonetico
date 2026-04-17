@@ -4,27 +4,27 @@ export function BonusSection() {
   const bonuses = [
   {
     title: 'Cuaderno de Actividades con Imágenes',
-    value: 10
+    value: 10.000
   },
   {
     title: 'Cuaderno de Rompecabezas del Alfabeto',
-    value: 11
+    value: 9.000
   },
   {
     title: 'Cuaderno para Formar Palabras',
-    value: 10
+    value: 11.000
   },
   {
     title: 'Cuaderno del Alfabeto para vocalizar',
-    value: 9
+    value: 12.000
   },
   {
     title: 'Cuaderno de Los números con Trazado',
-    value: 10
+    value: 8.000
   },
   {
     title: 'Cuaderno de las Letras con Trazado',
-    value: 10
+    value: 9.000
   }];
 
   return (
