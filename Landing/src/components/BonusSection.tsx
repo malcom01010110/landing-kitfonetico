@@ -92,7 +92,7 @@ export function BonusSection() {
                 <div className="inline-block bg-green-50 text-success font-bold px-3 py-1 rounded-lg text-sm border border-green-200">
                   Valor:{' '}
                   <span className="line-through text-gray-400 mr-1">
-                    U${bonus.value}
+                    ${bonus.value}
                   </span>{' '}
                   (GRATIS)
                 </div>
