@@ -4,7 +4,7 @@ export function BonusSection() {
   const bonuses = [
   {
     title: 'Cuaderno de Actividades con Imágenes',
-    value: $10
+    value: 10
   },
   {
     title: 'Cuaderno de Rompecabezas del Alfabeto',
