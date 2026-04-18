@@ -57,7 +57,7 @@ export function HeroSection() {
             )}
           </ul>
 
-<motion.a
+<motion.a>
   href="https://mipaginaenshopify.myshopify.com/cart/51935759466798:1"
   onClick={() => {
     const urlParams = new URLSearchParams(window.location.search);
