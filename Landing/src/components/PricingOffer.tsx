@@ -90,7 +90,7 @@ export function PricingOffer() {
               </motion.a>
 
               {/* Trust Elements */}
-              <div className="w-full flex flex-col items-center gap-4">
+              <div className="flex flex-col items-center gap-4">
                 <div className="flex items-center gap-2 text-success font-medium text-sm">
                   <ShieldCheck className="w-5 h-5" />
                   <span>Pago 100% Seguro por MercadoPago</span>
