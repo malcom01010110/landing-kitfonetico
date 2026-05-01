@@ -78,11 +78,11 @@ export function HeroSection() {
           </motion.a>
 
           {/* Trust Badge */}
-<div className="mt-4 flex flex-col items-center justify-center gap-2">
+<div className="mt-4 flex items-center justify-center gap-2">
   <img
     src="/mercadopago.png"
-    alt="Pago seguro con MercadoPago"
-    className="h-8 object-contain"
+    alt="MercadoPago"
+    className="h-6 object-contain"
   />
   <p className="text-sm text-gray-600">
     Pago 100% seguro con MercadoPago
