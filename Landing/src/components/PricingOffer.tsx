@@ -94,6 +94,18 @@ export function PricingOffer() {
                 <div className="flex items-center gap-2 text-success font-medium text-sm">
                   <ShieldCheck className="w-5 h-5" />
                   <span>Pago 100% Seguro por MercadoPago</span>
+                                  <div className="flex gap-3 opacity-60">
+                  {/* Payment Method Placeholders */}
+                  <div className="w-12 h-8 bg-gray-200 rounded flex items-center justify-center text-xs font-bold">
+                    VISA
+                  </div>
+                  <div className="w-12 h-8 bg-gray-200 rounded flex items-center justify-center text-xs font-bold">
+                    MC
+                  </div>
+                  <div className="w-12 h-8 bg-gray-200 rounded flex items-center justify-center text-xs font-bold">
+                    AMEX
+                  </div>
+
                 </div>
                 </div>
               </div>
