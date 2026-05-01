@@ -93,7 +93,7 @@ export function PricingOffer() {
               <div className="w-full flex flex-col items-center gap-4">
                 <div className="flex items-center gap-2 text-success font-medium text-sm">
                   <ShieldCheck className="w-5 h-5" />
-                  <span>Pago 100% Seguro y Encriptado</span>
+                  <span>Pago 100% Seguro por MercadoPago</span>
                 </div>
 
                 <div className="flex gap-3 opacity-60">
