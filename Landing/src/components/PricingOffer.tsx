@@ -66,6 +66,9 @@ export function PricingOffer() {
 
 </div>
 
+            </div>
+
+
             {/* Right side: The Offer */}
             <div className="flex-1 p-8 md:p-10 flex flex-col justify-center items-center text-center">
               <p className="text-lg font-bold text-primary mb-2 uppercase tracking-wide">
