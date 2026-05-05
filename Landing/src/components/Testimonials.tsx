@@ -6,21 +6,21 @@ export function Testimonials() {
   const testimonials = [
     {
       quote:
-        'Mi hija empezó a formar palabras en apenas dos semanas. No lo podía creer.',
+        'Mi hija empezó a formar palabras en apenas dos semanas. Me sirvió.',
       name: 'Ana',
       role: 'Mamá de 3 hijos',
       image: '/ana.png' // 👈 poné tu ruta
     },
     {
       quote:
-        'Es fácil de usar incluso para nosotros que no tenemos experiencia en enseñanza. Ver a mi hijo leer sus primeras palabras fue emocionante.',
+        'Es fácil de usar incluso para nosotros que no tenemos mucha experiencia enseñando. Ver a mi hijo leer sus primeras palabras me emocionó.',
       name: 'Bruno',
       role: 'Papá primerizo',
       image: '/bruno.png'
     },
     {
       quote:
-        'Algo tan simple que marca tanta diferencia. Estoy muy contenta con la compra.',
+        'Simple, ejercicios cortos para hacer un ratito cada día y marca tanta diferencia. Contenta con la compra.',
       name: 'Camila',
       role: 'Mamá',
       image: '/camila.png'
