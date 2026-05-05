@@ -9,21 +9,21 @@ export function Testimonials() {
         'Mi hija empezó a formar palabras en apenas dos semanas. No lo podía creer.',
       name: 'Ana',
       role: 'Mamá de 3 hijos',
-      image: '/images/testimonials/ana.jpg' // 👈 poné tu ruta
+      image: '/images/testimonials/ana.png' // 👈 poné tu ruta
     },
     {
       quote:
         'Es fácil de usar incluso para nosotros que no tenemos experiencia en enseñanza. Ver a mi hijo leer sus primeras palabras fue emocionante.',
       name: 'Bruno',
       role: 'Papá primerizo',
-      image: '/images/testimonials/bruno.jpg'
+      image: '/images/testimonials/bruno.png'
     },
     {
       quote:
         'Algo tan simple que marca tanta diferencia. Estoy muy contenta con la compra.',
       name: 'Camila',
       role: 'Mamá',
-      image: '/images/testimonials/camila.jpg'
+      image: '/images/testimonials/camila.png'
     }
   ];
 
