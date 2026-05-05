@@ -61,7 +61,7 @@ export function PricingOffer() {
   <img
     src="/pack.jpeg"
     alt="Kit principal + bonos"
-    className="w-40 md:w-48 h-auto object-contain"
+    className="w-full h-full object-cover rounded-xl"
   />
 
 </div>
