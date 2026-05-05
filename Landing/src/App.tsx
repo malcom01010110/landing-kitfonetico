@@ -13,7 +13,7 @@ import { GuaranteeSection } from './components/GuaranteeSection';
 import { Testimonials } from './components/Testimonials';
 import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
-import Gracias from "./pages/gracias";
+import Gracias from "./pages/Gracias";
 export function App() {
   return (
     <div className="min-h-screen font-body text-body bg-cream selection:bg-accent/30">
