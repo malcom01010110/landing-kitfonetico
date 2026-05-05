@@ -37,7 +37,7 @@ export function HeroSection() {
               ))}
             </div>
             <span className="text-xs font-bold text-dark ml-2">
-              Más de 500 padres satisfechos
+              Más de 300 padres satisfechos
             </span>
           </div>
 
