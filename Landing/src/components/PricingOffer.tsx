@@ -52,13 +52,19 @@ export function PricingOffer() {
                 </div>
               </div>
 
-              <div className="relative w-full aspect-video bg-white rounded-xl border border-gray-200 flex items-center justify-center mb-4">
-                <div className="absolute -top-3 -right-3 bg-danger text-white font-bold px-3 py-1 rounded-full transform rotate-12 shadow-md">
-                  -84% OFF
-                </div>
-                <span className="text-4xl">📚 + 🎁</span>
-              </div>
-            </div>
+<div className="relative w-full aspect-video bg-white rounded-xl border border-gray-200 flex items-center justify-center mb-4">
+  
+  <div className="absolute -top-3 -right-3 bg-danger text-white font-bold px-3 py-1 rounded-full transform rotate-12 shadow-md">
+    -84% OFF
+  </div>
+
+  <img
+    src="/images/pack.png"
+    alt="Kit principal + bonos"
+    className="w-40 md:w-48 h-auto object-contain"
+  />
+
+</div>
 
             {/* Right side: The Offer */}
             <div className="flex-1 p-8 md:p-10 flex flex-col justify-center items-center text-center">
