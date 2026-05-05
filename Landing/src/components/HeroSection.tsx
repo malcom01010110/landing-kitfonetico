@@ -66,7 +66,11 @@ export function HeroSection() {
               </li>
             ))}
           </ul>
-
+<img
+  src="/social-proof.png"
+  alt="Más de 1.200 familias satisfechas"
+  className="w-full max-w-md mx-auto mb-6"
+/>
           <motion.a
             href={checkoutUrl}
             onClick={handleAddToCart}
