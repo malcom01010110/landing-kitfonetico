@@ -59,7 +59,7 @@ export function PricingOffer() {
   </div>
 
   <img
-    src="/images/pack.png"
+    src="/pack.jpeg"
     alt="Kit principal + bonos"
     className="w-40 md:w-48 h-auto object-contain"
   />
