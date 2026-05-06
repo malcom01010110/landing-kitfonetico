@@ -4,7 +4,7 @@ import { CheckCircle, Star } from 'lucide-react';
 
 export function HeroSection() {
   const checkoutUrl = useMemo(() => {
-    const baseUrl = 'https://pequesfelicesok.myshopify.com/cart/51935759466798:1';
+    const baseUrl = 'https://mpago.la/24qukGr';
 
     if (typeof window === 'undefined') return baseUrl;
 
