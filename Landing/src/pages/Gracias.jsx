@@ -191,7 +191,7 @@ function StepCard({ number, emoji, title, desc, delay }) {
 // ============================================================
 // MAIN PAGE
 // ============================================================
-export default function Gracias() {
+export default function gracias() {
   const [showConfetti, setShowConfetti] = useState(true);
 
   // Meta Pixel Purchase event (reemplazá con tu pixel ID real)
