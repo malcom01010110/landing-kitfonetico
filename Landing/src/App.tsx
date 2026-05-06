@@ -16,7 +16,7 @@ import { Testimonials } from './components/Testimonials';
 import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
 
-import Gracias from './pages/gracias';
+import gracias from './pages/gracias';
 
 function Home() {
   return (
