@@ -1,4 +1,6 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import { StickyAlertBar } from './components/StickyAlertBar';
 import { HeroSection } from './components/HeroSection';
 import { ProblemSection } from './components/ProblemSection';
@@ -13,8 +15,10 @@ import { GuaranteeSection } from './components/GuaranteeSection';
 import { Testimonials } from './components/Testimonials';
 import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
-import Gracias from "./pages/Gracias";
-export function App() {
+
+import Gracias from './pages/gracias';
+
+function Home() {
   return (
     <div className="min-h-screen font-body text-body bg-cream selection:bg-accent/30">
       <StickyAlertBar />
@@ -35,6 +39,17 @@ export function App() {
       </main>
 
       <Footer />
-    </div>);
+    </div>
+  );
+}
 
+export function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/gracias" element={<Gracias />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }

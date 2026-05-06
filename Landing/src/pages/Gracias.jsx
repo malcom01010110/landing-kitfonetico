@@ -224,22 +224,15 @@ export default function Gracias() {
           }}
         >
           {/* REEMPLAZÁ ESTO CON TU LOGO */}
-          <div
-            style={{
-              width: 140,
-              height: 44,
-              background: C.cremaOscuro,
-              borderRadius: 8,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 12,
-              color: C.textoSuave,
-              border: `1px dashed ${C.naranja}`,
-            }}
-          >
-            [ Tu logo acá ]
-          </div>
+          <img
+  src="/logo.png"
+  alt="Pequeños Felices"
+  style={{
+    width: 140,
+    height: "auto",
+    objectFit: "contain"
+  }}
+/>
         </header>
 
         {/* ── HERO ── */}
@@ -289,7 +282,7 @@ export default function Gracias() {
 
           <div className="fade-up-3">
             <a
-              href={DRIVE_URL}
+              href="https://drive.google.com/drive/u/5/folders/1Um-HcU0b-_C3z9xs40sMcIcFdTnYCdU0"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
@@ -354,7 +347,7 @@ export default function Gracias() {
         <section style={{ maxWidth: 640, margin: "0 auto", padding: "40px 24px 0", textAlign: "center" }}>
           <div className="fade-up-5">
             <a
-              href={DRIVE_URL}
+              href="https://drive.google.com/drive/u/5/folders/1Um-HcU0b-_C3z9xs40sMcIcFdTnYCdU0"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
@@ -364,20 +357,6 @@ export default function Gracias() {
           </div>
         </section>
 
-        {/* ── GARANTÍA ── */}
-        <section style={{ maxWidth: 640, margin: "0 auto", padding: "40px 24px 0" }}>
-          <div className="guarantee-badge fade-up-5">
-            <div style={{ fontSize: 40 }}>🛡️</div>
-            <div>
-              <div style={{ fontWeight: 800, fontSize: 16, color: C.verde, marginBottom: 4 }}>
-                Garantía de 7 días
-              </div>
-              <div style={{ fontSize: 14, color: C.textoSuave, lineHeight: 1.5 }}>
-                Si por cualquier motivo no quedás conforme, te devolvemos el 100% de tu dinero. Sin preguntas, sin vueltas.
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* ── CONTACTO ── */}
         <section
@@ -388,10 +367,10 @@ export default function Gracias() {
             ¿Tenés alguna duda o consulta?<br />
             Escribinos a{" "}
             <a
-              href="mailto:xxxx@gmail.com"
+              href="mailto:pequesfelicesok@gmail.com"
               style={{ color: C.naranjaOscuro, fontWeight: 700, textDecoration: "none" }}
             >
-              xxxx@gmail.com
+              pequesfelicesok@gmail.com
             </a>{" "}
             — estamos para acompañarlos en cada paso. 💛
           </p>
