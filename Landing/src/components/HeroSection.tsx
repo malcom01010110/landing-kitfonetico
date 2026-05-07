@@ -73,7 +73,7 @@ export function HeroSection() {
           />
           <motion.a
             href={checkoutUrl}
-            onClick={handleAddToCart}
+            onClick={handleInitiateCheckout}
             className="inline-block w-full md:w-auto bg-accent hover:bg-yellow-500 text-dark font-heading font-bold text-lg md:text-xl py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105 text-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

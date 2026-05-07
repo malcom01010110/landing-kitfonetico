@@ -1,6 +1,6 @@
 import "./index.css";
 import React from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import { App } from "./App";
 
 // Meta Pixel
@@ -20,4 +20,8 @@ import { App } from "./App";
 (window as any).fbq("init", "2036124427118230");
 (window as any).fbq("track", "PageView");
 
-render(<App />, document.getElementById("root"));
+const container = document.getElementById("root");
+if (container) {
+  const root = createRoot(container);
+  root.render(<App />);
+}
