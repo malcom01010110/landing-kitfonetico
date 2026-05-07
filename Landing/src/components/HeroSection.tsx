@@ -16,8 +16,8 @@ export function HeroSection() {
     return `${baseUrl}?fbclid=${encodeURIComponent(fbclid)}`;
   }, []);
 
-  const handleAddToCart = () => {
-    (window as any).fbq?.('track', 'AddToCart');
+  const handleInitiateCheckout = () => {
+    (window as any).fbq?.('track', 'InitiateCheckout');
   };
 
   return (
@@ -66,11 +66,11 @@ export function HeroSection() {
               </li>
             ))}
           </ul>
-<img
-  src="/social-proof.png"
-  alt="Más de 1.200 familias satisfechas"
-  className="w-full max-w-md mx-auto mb-6"
-/>
+          <img
+            src="/social-proof.png"
+            alt="Más de 1.200 familias satisfechas"
+            className="w-full max-w-md mx-auto mb-6"
+          />
           <motion.a
             href={checkoutUrl}
             onClick={handleAddToCart}
@@ -82,12 +82,12 @@ export function HeroSection() {
           </motion.a>
 
           {/* Trust Badge */}
-<div className="mt-3 text-center">
-  <p className="text-sm text-gray-600">
-    🔒 Pago 100% seguro con MercadoPago
-  </p>
-</div>
-          
+          <div className="mt-3 text-center">
+            <p className="text-sm text-gray-600">
+              🔒 Pago 100% seguro con MercadoPago
+            </p>
+          </div>
+
         </motion.div>
 
         {/* Image Placeholder */}
