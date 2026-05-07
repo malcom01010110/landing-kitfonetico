@@ -1,15 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Lock, Loader2 } from 'lucide-react';
+import { ShieldCheck, Lock } from 'lucide-react';
 import { PriceDisplay } from './PriceDisplay';
-import { useCheckout } from '../hooks/useCheckout';
+
+const SHOPIFY_CHECKOUT_URL =
+  'https://pequesfelicesok.myshopify.com/cart/51935759466798:1';
+
+function trackCheckoutClick() {
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    (window as any).fbq('trackCustom', 'CheckoutButtonClick', {
+      destination: 'shopify_checkout',
+      source: 'landing_cta',
+    });
+  }
+}
 
 export function PricingOffer() {
-  const { loading, error, initiateCheckout } = useCheckout({ preferSandbox: true });
-
   const handleBuyClick = () => {
-    (window as any).fbq?.('track', 'InitiateCheckout');
-    initiateCheckout();
+    trackCheckoutClick();
+    window.location.href = SHOPIFY_CHECKOUT_URL;
   };
 
   return (
@@ -79,29 +88,13 @@ export function PricingOffer() {
 
               <motion.button
                 onClick={handleBuyClick}
-                disabled={loading}
-                className="w-full bg-accent hover:bg-yellow-500 text-dark font-heading font-black text-xl py-5 px-8 rounded-2xl shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-2 mb-3 disabled:opacity-70 disabled:cursor-not-allowed"
-                whileHover={loading ? {} : { scale: 1.05 }}
-                whileTap={loading ? {} : { scale: 0.95 }}
+                className="w-full bg-accent hover:bg-yellow-500 text-dark font-heading font-black text-xl py-5 px-8 rounded-2xl shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-2 mb-6"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                {loading ? (
-                  <>
-                    <Loader2 className="w-6 h-6 animate-spin" />
-                    Redirigiendo…
-                  </>
-                ) : (
-                  <>
-                    <Lock className="w-6 h-6" />
-                    Quiero asegurar mi acceso ahora
-                  </>
-                )}
+                <Lock className="w-6 h-6" />
+                Quiero asegurar mi acceso ahora
               </motion.button>
-
-              {error && (
-                <p className="text-sm text-danger font-medium mb-4">
-                  ⚠️ {error}
-                </p>
-              )}
 
               {/* Trust Elements */}
               <div className="flex flex-col items-center gap-4">

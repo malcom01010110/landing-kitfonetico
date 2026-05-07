@@ -1,15 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, Star, Loader2 } from 'lucide-react';
-import { useCheckout } from '../hooks/useCheckout';
+import { CheckCircle, Star } from 'lucide-react';
+
+const SHOPIFY_CHECKOUT_URL =
+  'https://pequesfelicesok.myshopify.com/cart/51935759466798:1';
+
+function trackCheckoutClick() {
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    (window as any).fbq('trackCustom', 'CheckoutButtonClick', {
+      destination: 'shopify_checkout',
+      source: 'landing_cta',
+    });
+  }
+}
 
 export function HeroSection() {
-  const { loading, error, initiateCheckout } = useCheckout({ preferSandbox: true });
-
   const handleBuyClick = () => {
-    // Fire Meta Pixel event before navigating
-    (window as any).fbq?.('track', 'InitiateCheckout');
-    initiateCheckout();
+    trackCheckoutClick();
+    window.location.href = SHOPIFY_CHECKOUT_URL;
   };
 
   return (
@@ -67,26 +75,12 @@ export function HeroSection() {
 
           <motion.button
             onClick={handleBuyClick}
-            disabled={loading}
-            className="inline-flex items-center justify-center gap-2 w-full md:w-auto bg-accent hover:bg-yellow-500 text-dark font-heading font-bold text-lg md:text-xl py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105 text-center disabled:opacity-70 disabled:cursor-not-allowed"
-            whileHover={loading ? {} : { scale: 1.05 }}
-            whileTap={loading ? {} : { scale: 0.95 }}
+            className="inline-block w-full md:w-auto bg-accent hover:bg-yellow-500 text-dark font-heading font-bold text-lg md:text-xl py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105 text-center"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            {loading ? (
-              <>
-                <Loader2 className="w-5 h-5 animate-spin" />
-                Redirigiendo…
-              </>
-            ) : (
-              '👉 Quiero que mi hijo aprenda a leer rápido'
-            )}
+            👉 Quiero que mi hijo aprenda a leer rápido
           </motion.button>
-
-          {error && (
-            <p className="text-sm text-danger font-medium mt-2">
-              ⚠️ {error}
-            </p>
-          )}
 
           {/* Trust Badge */}
           <div className="mt-3 text-center">
@@ -94,7 +88,6 @@ export function HeroSection() {
               🔒 Pago 100% seguro con MercadoPago
             </p>
           </div>
-
         </motion.div>
 
         {/* Image */}
