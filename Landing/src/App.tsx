@@ -17,6 +17,8 @@ import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
 
 import Gracias from './pages/Gracias';
+import PagoFallido from './pages/PagoFallido';
+import PagoPendiente from './pages/PagoPendiente';
 
 function Home() {
   return (
@@ -49,6 +51,8 @@ export function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gracias" element={<Gracias />} />
+        <Route path="/pago-fallido" element={<PagoFallido />} />
+        <Route path="/pago-pendiente" element={<PagoPendiente />} />
       </Routes>
     </BrowserRouter>
   );

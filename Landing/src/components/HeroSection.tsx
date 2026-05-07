@@ -1,23 +1,15 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, Star } from 'lucide-react';
+import { CheckCircle, Star, Loader2 } from 'lucide-react';
+import { useCheckout } from '../hooks/useCheckout';
 
 export function HeroSection() {
-  const checkoutUrl = useMemo(() => {
-    const baseUrl = 'https://mpago.la/24qukGr';
+  const { loading, error, initiateCheckout } = useCheckout({ preferSandbox: true });
 
-    if (typeof window === 'undefined') return baseUrl;
-
-    const params = new URLSearchParams(window.location.search);
-    const fbclid = params.get('fbclid');
-
-    if (!fbclid) return baseUrl;
-
-    return `${baseUrl}?fbclid=${encodeURIComponent(fbclid)}`;
-  }, []);
-
-  const handleInitiateCheckout = () => {
+  const handleBuyClick = () => {
+    // Fire Meta Pixel event before navigating
     (window as any).fbq?.('track', 'InitiateCheckout');
+    initiateCheckout();
   };
 
   return (
@@ -66,20 +58,35 @@ export function HeroSection() {
               </li>
             ))}
           </ul>
+
           <img
             src="/social-proof.png"
             alt="Más de 1.200 familias satisfechas"
             className="w-full max-w-md mx-auto mb-6"
           />
-          <motion.a
-            href={checkoutUrl}
-            onClick={handleInitiateCheckout}
-            className="inline-block w-full md:w-auto bg-accent hover:bg-yellow-500 text-dark font-heading font-bold text-lg md:text-xl py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105 text-center"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+
+          <motion.button
+            onClick={handleBuyClick}
+            disabled={loading}
+            className="inline-flex items-center justify-center gap-2 w-full md:w-auto bg-accent hover:bg-yellow-500 text-dark font-heading font-bold text-lg md:text-xl py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105 text-center disabled:opacity-70 disabled:cursor-not-allowed"
+            whileHover={loading ? {} : { scale: 1.05 }}
+            whileTap={loading ? {} : { scale: 0.95 }}
           >
-            👉 Quiero que mi hijo aprenda a leer rápido
-          </motion.a>
+            {loading ? (
+              <>
+                <Loader2 className="w-5 h-5 animate-spin" />
+                Redirigiendo…
+              </>
+            ) : (
+              '👉 Quiero que mi hijo aprenda a leer rápido'
+            )}
+          </motion.button>
+
+          {error && (
+            <p className="text-sm text-danger font-medium mt-2">
+              ⚠️ {error}
+            </p>
+          )}
 
           {/* Trust Badge */}
           <div className="mt-3 text-center">
@@ -90,7 +97,7 @@ export function HeroSection() {
 
         </motion.div>
 
-        {/* Image Placeholder */}
+        {/* Image */}
         <motion.div
           className="flex-1 w-full"
           initial={{ opacity: 0, x: 20 }}

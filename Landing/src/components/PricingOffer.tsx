@@ -1,28 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Lock } from 'lucide-react';
+import { ShieldCheck, Lock, Loader2 } from 'lucide-react';
 import { PriceDisplay } from './PriceDisplay';
+import { useCheckout } from '../hooks/useCheckout';
+
 export function PricingOffer() {
+  const { loading, error, initiateCheckout } = useCheckout({ preferSandbox: true });
+
+  const handleBuyClick = () => {
+    (window as any).fbq?.('track', 'InitiateCheckout');
+    initiateCheckout();
+  };
+
   return (
     <section className="py-20 px-4 bg-white pt-[50px] pb-[50px]" id="pricing">
       <div className="max-w-4xl mx-auto">
         <motion.div
           className="text-center mb-10"
-          initial={{
-            opacity: 0,
-            y: 20
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0
-          }}
-          viewport={{
-            once: true
-          }}
-          transition={{
-            duration: 0.6
-          }}>
-
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="text-3xl md:text-4xl font-heading font-black text-dark mb-4">
             Todo esto, por una fracción de lo que vale:
           </h2>
@@ -53,21 +52,16 @@ export function PricingOffer() {
               </div>
 
               <div className="relative w-full aspect-video bg-white rounded-xl border border-gray-200 flex items-center justify-center mb-4">
-
                 <div className="absolute -top-3 -right-3 bg-danger text-white font-bold px-3 py-1 rounded-full transform rotate-12 shadow-md">
                   -84% OFF
                 </div>
-
                 <img
                   src="/pack.jpeg"
                   alt="Kit principal + bonos"
                   className="w-full h-full object-cover rounded-xl"
                 />
-
               </div>
-
             </div>
-
 
             {/* Right side: The Offer */}
             <div className="flex-1 p-8 md:p-10 flex flex-col justify-center items-center text-center">
@@ -83,20 +77,31 @@ export function PricingOffer() {
                 Pago único · En la moneda de tu país · Acceso de por vida
               </p>
 
-              <motion.a
-                href="https://mpago.la/24qukGr"
-                onClick={() => (window as any).fbq("track", "InitiateCheckout")}
-                className="w-full bg-accent hover:bg-yellow-500 text-dark font-heading font-black text-xl py-5 px-8 rounded-2xl shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-2 mb-6"
-                whileHover={{
-                  scale: 1.05
-                }}
-                whileTap={{
-                  scale: 0.95
-                }}>
+              <motion.button
+                onClick={handleBuyClick}
+                disabled={loading}
+                className="w-full bg-accent hover:bg-yellow-500 text-dark font-heading font-black text-xl py-5 px-8 rounded-2xl shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-2 mb-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                whileHover={loading ? {} : { scale: 1.05 }}
+                whileTap={loading ? {} : { scale: 0.95 }}
+              >
+                {loading ? (
+                  <>
+                    <Loader2 className="w-6 h-6 animate-spin" />
+                    Redirigiendo…
+                  </>
+                ) : (
+                  <>
+                    <Lock className="w-6 h-6" />
+                    Quiero asegurar mi acceso ahora
+                  </>
+                )}
+              </motion.button>
 
-                <Lock className="w-6 h-6" />
-                Quiero asegurar mi acceso ahora
-              </motion.a>
+              {error && (
+                <p className="text-sm text-danger font-medium mb-4">
+                  ⚠️ {error}
+                </p>
+              )}
 
               {/* Trust Elements */}
               <div className="flex flex-col items-center gap-4">
@@ -104,7 +109,6 @@ export function PricingOffer() {
                   <ShieldCheck className="w-5 h-5" />
                   <span>Pago 100% Seguro por MercadoPago</span>
                   <div className="flex gap-3 opacity-60">
-                    {/* Payment Method Placeholders */}
                     <div className="w-12 h-8 bg-gray-200 rounded flex items-center justify-center text-xs font-bold">
                       VISA
                     </div>
@@ -114,7 +118,6 @@ export function PricingOffer() {
                     <div className="w-12 h-8 bg-gray-200 rounded flex items-center justify-center text-xs font-bold">
                       AMEX
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -122,6 +125,6 @@ export function PricingOffer() {
           </div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
