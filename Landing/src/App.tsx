@@ -17,6 +17,8 @@ import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
 
 import Gracias from './pages/Gracias';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
 
 function Home() {
   return (
@@ -49,6 +51,8 @@ export function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gracias" element={<Gracias />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
     </BrowserRouter>
   );
