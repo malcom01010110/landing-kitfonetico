@@ -225,7 +225,7 @@ export default function Gracias() {
         >
           {/* REEMPLAZÁ ESTO CON TU LOGO */}
           <img
-  src="/logo.png"
+  src="/logo.webp"
   alt="Pequeños Felices"
   style={{
     width: 140,

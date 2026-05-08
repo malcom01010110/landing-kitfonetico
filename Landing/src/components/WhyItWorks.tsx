@@ -26,7 +26,7 @@ export function WhyItWorks() {
 
         <div className="mb-10 w-full max-w-md mx-auto rounded-2xl overflow-hidden shadow-lg">
           <img
-            src="/mockup_palabras_trazo.jpg"
+            src="/mockup_palabras_trazo.webp"
             alt="Cuaderno de trazos de letras del kit de grafismo fonético"
             className="w-full h-full object-cover" />
           

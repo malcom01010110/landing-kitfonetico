@@ -9,21 +9,21 @@ export function Testimonials() {
         'Mi hija empezó a formar palabras en apenas dos semanas. Me sirvió.',
       name: 'Ana',
       role: 'Mamá de 3 hijos',
-      image: '/ana.png' // 👈 poné tu ruta
+      image: '/ana.webp' // 👈 poné tu ruta
     },
     {
       quote:
         'Es fácil de usar incluso para nosotros que no tenemos mucha experiencia enseñando. Ver a mi hijo leer sus primeras palabras me emocionó.',
       name: 'Bruno',
       role: 'Papá primerizo',
-      image: '/bruno.png'
+      image: '/bruno.webp'
     },
     {
       quote:
         'Simple, ejercicios cortos para hacer un ratito cada día y marca tanta diferencia. Contenta con la compra.',
       name: 'Camila',
       role: 'Mamá',
-      image: '/camila.png'
+      image: '/camila.webp'
     }
   ];
 

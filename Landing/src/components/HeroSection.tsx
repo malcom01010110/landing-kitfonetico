@@ -68,7 +68,7 @@ export function HeroSection() {
           </ul>
 
           <img
-            src="/social-proof.png"
+            src="/social-proof.webp"
             alt="Más de 1.200 familias satisfechas"
             className="w-full max-w-md mx-auto mb-6"
           />
@@ -99,7 +99,7 @@ export function HeroSection() {
         >
           <div className="relative w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
             <img
-              src="/image.png_202604062021.jpg"
+              src="/image.png_202604062021.webp"
               alt="Niña aprendiendo a leer con el kit de lectura"
               className="w-full h-full object-cover"
             />

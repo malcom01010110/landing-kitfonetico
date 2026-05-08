@@ -65,7 +65,7 @@ export function PricingOffer() {
                   -84% OFF
                 </div>
                 <img
-                  src="/pack.jpeg"
+                  src="/pack.webp"
                   alt="Kit principal + bonos"
                   className="w-full h-full object-cover rounded-xl"
                 />

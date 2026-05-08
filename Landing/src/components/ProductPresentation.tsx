@@ -55,7 +55,7 @@ export function ProductPresentation() {
             
             <div className="aspect-square rounded-3xl shadow-xl overflow-hidden">
               <img
-                src="/mockup_landing.jpg"
+                src="/mockup_landing.webp"
                 alt="Kit de Grafismo Fonético - Pequeños Felices"
                 className="w-full h-full object-cover" />
               
