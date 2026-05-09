@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, Star } from 'lucide-react';
 
 const CHECKOUT_URL =
-  'https://pequenosfelices.mitiendanube.com/checkout/v3/start/1965530604/a0d3d14e44c3cd68cf5144b15f3974b53661527e?from_store=1&country=AR';
+  'https://pequenosfelices.mitiendanube.com/productos/kit-grafismo-fonetico/';
 
 function trackCheckoutClick() {
   if (typeof window !== 'undefined' && (window as any).fbq) {
