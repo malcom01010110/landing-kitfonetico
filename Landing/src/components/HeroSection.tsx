@@ -7,9 +7,10 @@ const CHECKOUT_URL =
 
 function trackCheckoutClick() {
   if (typeof window !== 'undefined' && (window as any).fbq) {
-    (window as any).fbq('trackCustom', 'CheckoutButtonClick', {
-      destination: 'tiendanube_checkout',
-      source: 'landing_cta',
+    (window as any).fbq('track', 'AddToCart', {
+      value: 14000,
+      currency: 'ARS',
+      content_name: 'Kit Grafismo Fonético',
     });
   }
 }
