@@ -198,7 +198,7 @@ export default function Gracias() {
   // Meta Pixel Purchase event (reemplazá con tu pixel ID real)
   useEffect(() => {
     if (typeof window !== "undefined" && window.fbq) {
-      window.fbq("track", "Purchase", { value: 12000, currency: "ARS" });
+      window.fbq("track", "Purchase", { value: 14000, currency: "ARS" });
     }
     const timer = setTimeout(() => setShowConfetti(false), 4000);
     return () => clearTimeout(timer);

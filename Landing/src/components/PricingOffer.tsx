@@ -62,7 +62,7 @@ export function PricingOffer() {
 
               <div className="relative w-full aspect-video bg-white rounded-xl border border-gray-200 flex items-center justify-center mb-4">
                 <div className="absolute -top-3 -right-3 bg-danger text-white font-bold px-3 py-1 rounded-full transform rotate-12 shadow-md">
-                  -84% OFF
+                  -80% OFF
                 </div>
                 <img
                   src="/pack.webp"
@@ -79,7 +79,7 @@ export function PricingOffer() {
               </p>
 
               <div className="text-6xl md:text-7xl font-heading font-black text-dark mb-4 flex items-start justify-center">
-                <PriceDisplay amount={12000} />
+                <PriceDisplay amount={14000} />
               </div>
 
               <p className="text-sm text-body font-medium mb-8 bg-gray-100 py-2 px-4 rounded-full">
