@@ -3,13 +3,13 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, Lock } from 'lucide-react';
 import { PriceDisplay } from './PriceDisplay';
 
-const SHOPIFY_CHECKOUT_URL =
-  'https://pequesfelicesok.myshopify.com/cart/51935759466798:1';
+const CHECKOUT_URL =
+  'https://pequenosfelices.mitiendanube.com/checkout/v3/start/1965530604/a0d3d14e44c3cd68cf5144b15f3974b53661527e?from_store=1&country=AR';
 
 function trackCheckoutClick() {
   if (typeof window !== 'undefined' && (window as any).fbq) {
     (window as any).fbq('trackCustom', 'CheckoutButtonClick', {
-      destination: 'shopify_checkout',
+      destination: 'tiendanube_checkout',
       source: 'landing_cta',
     });
   }
@@ -18,7 +18,7 @@ function trackCheckoutClick() {
 export function PricingOffer() {
   const handleBuyClick = () => {
     trackCheckoutClick();
-    window.location.href = SHOPIFY_CHECKOUT_URL;
+    window.location.href = CHECKOUT_URL;
   };
 
   return (

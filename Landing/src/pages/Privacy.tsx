@@ -23,7 +23,7 @@ export default function Privacy() {
         <div className="space-y-6 text-body leading-relaxed">
           <section>
             <h2 className="text-xl font-bold mb-3">1. Información que Recolectamos</h2>
-            <p>Al realizar una compra, recolectamos información básica como su nombre y correo electrónico necesaria para la entrega del producto digital. El procesamiento de pagos se realiza a través de plataformas seguras como MercadoPago o Shopify, por lo que nosotros no almacenamos sus datos de tarjeta de crédito.</p>
+            <p>Al realizar una compra, recolectamos información básica como su nombre y correo electrónico necesaria para la entrega del producto digital. El procesamiento de pagos se realiza a través de plataformas seguras como MercadoPago o Tiendanube, por lo que nosotros no almacenamos sus datos de tarjeta de crédito.</p>
           </section>
 
           <section>
