@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, Star } from 'lucide-react';
 
 const CHECKOUT_URL =
-  'https://pequenosfelices.mitiendanube.com/productos/kit-grafismo-fonetico/';
+  'https://acceso.pequesfelices.lat/productos/kit-grafismo-fonetico/';
 
 export function HeroSection() {
   return (

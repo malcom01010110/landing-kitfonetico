@@ -4,7 +4,7 @@ import { ShieldCheck, Lock } from 'lucide-react';
 import { PriceDisplay } from './PriceDisplay';
 
 const CHECKOUT_URL =
-  'https://pequenosfelices.mitiendanube.com/productos/kit-grafismo-fonetico/';
+  'https://acceso.pequesfelices.lat/productos/kit-grafismo-fonetico/';
 
 export function PricingOffer() {
   return (
