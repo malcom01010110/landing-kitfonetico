@@ -6,22 +6,7 @@ import { PriceDisplay } from './PriceDisplay';
 const CHECKOUT_URL =
   'https://pequenosfelices.mitiendanube.com/productos/kit-grafismo-fonetico/';
 
-function trackCheckoutClick() {
-  if (typeof window !== 'undefined' && (window as any).fbq) {
-    (window as any).fbq('track', 'AddToCart', {
-      value: 14000,
-      currency: 'ARS',
-      content_name: 'Kit Grafismo Fonético',
-    });
-  }
-}
-
 export function PricingOffer() {
-  const handleBuyClick = () => {
-    trackCheckoutClick();
-    window.location.href = CHECKOUT_URL;
-  };
-
   return (
     <section className="py-20 px-4 bg-white pt-[50px] pb-[50px]" id="pricing">
       <div className="max-w-4xl mx-auto">
@@ -87,15 +72,15 @@ export function PricingOffer() {
                 Pago único · En la moneda de tu país · Acceso de por vida
               </p>
 
-              <motion.button
-                onClick={handleBuyClick}
+              <motion.a
+                href={CHECKOUT_URL}
                 className="w-full bg-accent hover:bg-yellow-500 text-dark font-heading font-black text-xl py-5 px-8 rounded-2xl shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-2 mb-6"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Lock className="w-6 h-6" />
                 Quiero asegurar mi acceso ahora
-              </motion.button>
+              </motion.a>
 
               {/* Trust Elements */}
               <div className="flex flex-col items-center gap-4">

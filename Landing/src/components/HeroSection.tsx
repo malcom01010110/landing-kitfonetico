@@ -5,22 +5,7 @@ import { CheckCircle, Star } from 'lucide-react';
 const CHECKOUT_URL =
   'https://pequenosfelices.mitiendanube.com/productos/kit-grafismo-fonetico/';
 
-function trackCheckoutClick() {
-  if (typeof window !== 'undefined' && (window as any).fbq) {
-    (window as any).fbq('track', 'AddToCart', {
-      value: 14000,
-      currency: 'ARS',
-      content_name: 'Kit Grafismo Fonético',
-    });
-  }
-}
-
 export function HeroSection() {
-  const handleBuyClick = () => {
-    trackCheckoutClick();
-    window.location.href = CHECKOUT_URL;
-  };
-
   return (
     <section className="pt-14 pb-10 px-5 md:pt-32 md:pb-24 max-w-6xl mx-auto">
       <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
@@ -74,14 +59,14 @@ export function HeroSection() {
             className="w-full max-w-md mx-auto mb-6"
           />
 
-          <motion.button
-            onClick={handleBuyClick}
+          <motion.a
+            href={CHECKOUT_URL}
             className="inline-block w-full md:w-auto bg-accent hover:bg-yellow-500 text-dark font-heading font-bold text-lg md:text-xl py-4 px-8 rounded-full shadow-lg transition-transform hover:scale-105 text-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             👉 Quiero que mi hijo aprenda a leer rápido
-          </motion.button>
+          </motion.a>
 
           {/* Trust Badge */}
           <div className="mt-3 text-center">
