@@ -19,17 +19,24 @@ export function WhyItWorks() {
         transition={{
           duration: 0.6
         }}>
-        
+
         <h2 className="text-2xl md:text-3xl font-heading font-bold text-dark mb-8">
           Antes de leer, el cerebro necesita prepararse. Y acá está el secreto.
         </h2>
 
-        <div className="mb-10 w-full max-w-md mx-auto rounded-2xl overflow-hidden shadow-lg">
-          <img
-            src="/mockup_palabras_trazo.webp"
-            alt="Cuaderno de trazos de letras del kit de grafismo fonético"
-            className="w-full h-full object-cover" />
-          
+        <div className="mb-10 w-full max-w-md mx-auto rounded-2xl overflow-hidden shadow-lg bg-gray-50 flex items-center justify-center min-h-[250px]">
+          {/* Cambia la ruta en 'src' por tu archivo de video, ej. '/mi-video.mp4' */}
+          <video
+            src="/Vid muestra.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            controls
+            className="w-full h-full object-cover"
+          >
+            Tu navegador no soporta el elemento de video.
+          </video>
         </div>
 
         <p className="text-lg text-body leading-relaxed text-left md:text-center">
